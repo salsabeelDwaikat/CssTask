@@ -5,8 +5,82 @@
     font-family: 'Arial', sans-serif;
 }
 
+
 body {
     background-color: #e0f7f8;
+    color: #333;
+}
+
+.header-container {
+    width: 100%;
+    background-image: url("header.jpg");
+    background-position: center;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+
+.mood-btn {
+    position: relative;
+    bottom: 15px;
+    left: 40%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    border: 2px solid white;
+    background-color: white;
+    
+}
+
+.mood-btn:hover {
+    color: #333;
+}
+
+.search-bar-container {
+    width: 67%;
+    
+    margin: 0 auto;
+    padding: 0px 0;
+    position: absolute;
+    top: 45px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 10; 
+}
+
+
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    padding-right: 10px; 
+}
+
+.clear-btn {
+    position: absolute;
+    right: 40px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding-bottom: 17px;
+}
+
+.clear-btn:hover {
     color: #333;
 }
 
@@ -16,22 +90,20 @@ body {
     padding: 20px;
 }
 
-.search-bar {
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    background-color: #f0f4f8;
-    margin-bottom: 20px;
-}
-
 .job-listings {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
 }
 
+.job-cards-container{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
 .job-card {
     display: flex;
     align-items: flex-start;
@@ -41,10 +113,18 @@ body {
     border-radius: 10px;
     transition: transform 0.2s ease-in-out;
     position: relative;
+    margin-bottom: 20px;
+    
 }
 
 .job-card:hover {
     transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.job-card:focus {
+    outline: none;
+    border-left:  4px solid rgba(18, 129, 111, 0.6) ;
 }
 
 .company-logo {
@@ -54,6 +134,8 @@ body {
     border-radius: 50%;
     background-color: #ddd;
     margin-right: 20px;
+    background-size: cover;   
+    background-position: center;
 }
 
 .tag-name, .tag-new, .tag-featured {
@@ -93,7 +175,7 @@ p {
 .job-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items:last baseline;
     padding: 10px;
 }
 
@@ -124,27 +206,69 @@ p {
 
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
-    .container {
+  
+    .search-bar-container {
+        width: 83%;
+        
+        margin: 0 auto;
+        padding: 0px 0;
+        position: absolute;
+        top: 45px; 
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        z-index: 10; 
+    }
+    
+    .search-bar {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+
+     }
+
+     .container {
         padding: 10px;
         max-width: 95%;
     }
 
     .job-card {
-        flex-direction: column; 
-        padding: 15px;
-        align-items: flex-start;
+        display: flex;
+        align-items:center;
+        padding: 30px;
         height: auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        transition: transform 0.2s ease-in-out;
+        position: relative;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    .company-logo {
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ddd;
+        margin-right: 20px;
+        top: 50%;
+        
+        
     }
 
-    .company-logo {
-        margin-bottom: 10px;
+    .job-details{
+        top: 20px;
     }
 
     .job-tags {
-        top: auto;
+        top: 80%;
         right: auto;
         margin-top: 10px;
-        position: static;
+       
+        
+        
     }
 
     .job-header {
@@ -159,9 +283,14 @@ p {
 
 /* For screens smaller than 480px  */
 @media (max-width: 480px) {
+    .search-bar-container{
+        display: flexbox;
+        width: 85%;
+    }
     .search-bar {
         font-size: 14px;
         padding: 10px;
+        
     }
 
     .job-header h2 {
@@ -193,6 +322,7 @@ p {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: 85%;
     }
 
     .company-logo {

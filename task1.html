@@ -1,191 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-            <input type="text" placeholder="Search your dream job..." class="search-bar">
-        </header>
-        
-        <div class="job-listings">
-            <!-- Job Card 1 -->
-            <div class="job-card">
-                <div class="company-logo photosnap"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Photosnap</span> <!-- Company Name -->
-                    <span class="tag-new">NEW!</span> <!-- New Tag -->
-                    <div class="tag-featured">FEATURED</div> <!-- Featured Tag -->
-                    <h3>Senior Frontend Developer</h3> <!-- Job Title -->
-                    <p>1d ago • Full Time • USA Only</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Frontend</span>
-                        <span>Senior</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div> <!-- Job Tags -->
-                </div>
+    <!-- Header Section -->
+    <header class="header-container">
+        <div class="header-content">
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search your dream job..." aria-label="Search your dream job">
+                <button class="clear-btn" onclick="document.querySelector('.search-bar').value = ''" aria-label="Clear search input">Clear</button>
             </div>
-
-            <!-- Job Card 2 -->
-            <div class="job-card">
-                <div class="company-logo manage"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Manage</span> <!-- Company Name -->
-                    <span class="tag-new">NEW!</span> <!-- New Tag -->
-                    <div class="tag-featured">FEATURED</div> <!-- Featured Tag -->
-                    <h3>Fullstack Developer</h3> <!-- Job Title -->
-                    <p>5d ago • Part Time • Remote</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Fullstack</span>
-                        <span>Midweight</span>
-                        <span>Python</span>
-                        <span>React</span>
-                    </div> <!-- Job Tags -->
-                </div>
+            <div class="mood-container">
+                <button class="mood-btn" onclick="toggleMood()">🌙</button>
             </div>
-
-            <!-- Job Card 3 -->
-            <div class="job-card">
-                <div class="company-logo account"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Account</span> <!-- Company Name -->
-                    <span class="tag-new">NEW!</span> <!-- New Tag -->
-                    <h3>Junior Backend Developer</h3> <!-- Job Title -->
-                    <p>2w ago • Contract • Worldwide</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Frontend</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Sass</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 4 -->
-            <div class="job-card">
-                <div class="company-logo myhome"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">MyHome</span> <!-- Company Name -->
-                    <h3>Junior Frontend Developer</h3> <!-- Job Title -->
-                    <p>2d ago • Contract • USA</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Frontend</span>
-                        <span>Junior</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 5 -->
-            <div class="job-card">
-                <div class="company-logo loop-studios"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Loop Studios</span> <!-- Company Name -->
-                    <h3>Software Engineer</h3> <!-- Job Title -->
-                    <p>1w ago • Full Time • Worldwide</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Fullstack</span>
-                        <span>Midweight</span>
-                        <span>JavaScript</span>
-                        <span>Ruby</span>
-                        <span>Sass</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 6 -->
-            <div class="job-card">
-                <div class="company-logo facelt"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Facelt</span> <!-- Company Name -->
-                    <h3>Junior Backend Developer</h3> <!-- Job Title -->
-                    <p>2w ago • Full Time • UK Only</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Backend</span>
-                        <span>Junior</span>
-                        <span>Ruby</span>
-                        <span>RoR</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 7 -->
-            <div class="job-card">
-                <div class="company-logo shortly"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Shortly</span> <!-- Company Name -->
-                    <h3>Junior Backend Developer</h3> <!-- Job Title -->
-                    <p>2w ago • Full Time • UK Only</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Frontend</span>
-                        <span>Junior</span>
-                        <span>HTML</span>
-                        <span>JavaScript</span>
-                        <span>Sass</span> 
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 8 -->
-            <div class="job-card">
-                <div class="company-logo insure"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Insure</span> <!-- Company Name -->
-                    <h3>Junior Developer</h3> <!-- Job Title -->
-                    <p>2w ago • Full Time • USA Only</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Frontend</span>
-                        <span>Junior</span>
-                        <span>JavaScript</span>
-                        <span>Vue</span>
-                        <span>Sass</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 9 -->
-            <div class="job-card">
-                <div class="company-logo eyecame-co"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">Eyecame Co.</span> <!-- Company Name -->
-                    <h3>Full Stack Engineer</h3> <!-- Job Title -->
-                    <p>3w ago • Full Time • Worldwide</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Fullstack</span>
-                        <span>Midweight</span>
-                        <span>JavaScript</span>
-                        <span>Python</span>
-                        <span>Django</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
-            <!-- Job Card 10 -->
-            <div class="job-card">
-                <div class="company-logo air-filter"></div> <!-- Company Logo Placeholder -->
-                <div class="job-details">
-                    <span class="tag-name">The Air Filter Company</span> <!-- Company Name -->
-                    <h3>Front-end Developer</h3> <!-- Job Title -->
-                    <p>1mo ago • Part Time • Worldwide</p> <!-- Job Info -->
-                    <div class="job-tags">
-                        <span>Frontend</span>
-                        <span>Junior</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Sass</span>
-                    </div> <!-- Job Tags -->
-                </div>
-            </div>
-
         </div>
+    </header> 
+    
+    
+
+    <div class="container">
+        
+
+        <!-- Job Listings Section -->
+        <section class="job-listings">
+            <!-- Job Card Group -->
+            <div class="job-cards-container">
+                <!-- Job Card 1 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo photosnap" style="background-image: url('logos/logo1.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Photosnap</span>
+                        <span class="tag-new">NEW!</span>
+                        <div class="tag-featured">FEATURED</div>
+                        <h3>Senior Frontend Developer</h3>
+                        <p>1d ago • Full Time • USA Only</p>
+                        <div class="job-tags">
+                            <span>Frontend</span>
+                            <span>Senior</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo manage" style="background-image: url('logos/logo2.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Manage</span>
+                        <span class="tag-new">NEW!</span>
+                        <div class="tag-featured">FEATURED</div>
+                        <h3>Fullstack Developer</h3>
+                        <p>5d ago • Part Time • Remote</p>
+                        <div class="job-tags">
+                            <span>Fullstack</span>
+                            <span>Midweight</span>
+                            <span>Python</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo account" style="background-image: url('logos/logo3.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Account</span>
+                        <span class="tag-new">NEW!</span>
+                        <h3>Junior Backend Developer</h3>
+                        <p>2w ago • Contract • Worldwide</p>
+                        <div class="job-tags">
+                            <span>Frontend</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Sass</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo myhome" style="background-image: url('logos/logo4.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">MyHome</span>
+                        <h3>Junior Frontend Developer</h3>
+                        <p>2d ago • Contract • USA</p>
+                        <div class="job-tags">
+                            <span>Frontend</span>
+                            <span>Junior</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 5 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo loop-studios" style="background-image: url('logos/logo5.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Loop Studios</span>
+                        <h3>Software Engineer</h3>
+                        <p>1w ago • Full Time • Worldwide</p>
+                        <div class="job-tags">
+                            <span>Fullstack</span>
+                            <span>Midweight</span>
+                            <span>JavaScript</span>
+                            <span>Ruby</span>
+                            <span>Sass</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 6 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo facelt" style="background-image: url('logos/logo6.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Facelt</span>
+                        <h3>Junior Backend Developer</h3>
+                        <p>2w ago • Full Time • UK Only</p>
+                        <div class="job-tags">
+                            <span>Backend</span>
+                            <span>Junior</span>
+                            <span>Ruby</span>
+                            <span>RoR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 7 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo shortly" style="background-image: url('logos/logo7.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Shortly</span>
+                        <h3>Junior Backend Developer</h3>
+                        <p>2w ago • Full Time • UK Only</p>
+                        <div class="job-tags">
+                            <span>Frontend</span>
+                            <span>Junior</span>
+                            <span>HTML</span>
+                            <span>JavaScript</span>
+                            <span>Sass</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 8 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo insure" style="background-image: url('logos/logo8.jpeg');" ></div>
+                    <div class="job-details">
+                        <span class="tag-name">Insure</span>
+                        <h3>Junior Developer</h3>
+                        <p>2w ago • Full Time • USA Only</p>
+                        <div class="job-tags">
+                            <span>Frontend</span>
+                            <span>Junior</span>
+                            <span>JavaScript</span>
+                            <span>Vue</span>
+                            <span>Sass</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 9 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo eyecame-co" style="background-image: url('logos/logo9.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">Eyecame Co.</span>
+                        <h3>Full Stack Engineer</h3>
+                        <p>3w ago • Full Time • Worldwide</p>
+                        <div class="job-tags">
+                            <span>Fullstack</span>
+                            <span>Midweight</span>
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                            <span>Django</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Card 10 -->
+                <div class="job-card" tabindex="0">
+                    <div class="company-logo air-filter" style="background-image: url('logos/logo10.jpeg');"></div>
+                    <div class="job-details">
+                        <span class="tag-name">The Air Filter Company</span>
+                        <h3>Front-end Developer</h3>
+                        <p>1mo ago • Part Time • Worldwide</p>
+                        <div class="job-tags">
+                            <span>Frontend</span>
+                            <span>Junior</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Sass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
+
 </html>
