@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="task.js" defer></script>
+
 </head>
 
 <body>
+   
 
     <!-- Header Section -->
     <header class="header-container">
@@ -23,17 +27,17 @@
         </div>
     </header> 
     
-    
+ 
 
     <div class="container">
-        
+
 
         <!-- Job Listings Section -->
         <section class="job-listings">
             <!-- Job Card Group -->
             <div class="job-cards-container">
                 <!-- Job Card 1 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" onclick="navigateToDetail('jobHtml/jobDetail.html?id=1')">
                     <div class="company-logo photosnap" style="background-image: url('logos/logo1.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Photosnap</span>
@@ -42,17 +46,27 @@
                         <h3>Senior Frontend Developer</h3>
                         <p>1d ago • Full Time • USA Only</p>
                         <div class="job-tags">
-                            <span>Frontend</span>
-                            <span>Senior</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">Frontend</span>
+                            <span onclick="filterJobsByTag(this)">Senior</span>
+                            <span onclick="filterJobsByTag(this)">HTML</span>
+                            <span onclick="filterJobsByTag(this)">CSS</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 2 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail2.html?id=2')">
                     <div class="company-logo manage" style="background-image: url('logos/logo2.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Manage</span>
@@ -61,16 +75,27 @@
                         <h3>Fullstack Developer</h3>
                         <p>5d ago • Part Time • Remote</p>
                         <div class="job-tags">
-                            <span>Fullstack</span>
-                            <span>Midweight</span>
-                            <span>Python</span>
-                            <span>React</span>
+                            <span onclick="filterJobsByTag(this)">Fullstack</span>
+                            <span onclick="filterJobsByTag(this)">Midweight</span>
+                            <span onclick="filterJobsByTag(this)">Python</span>
+                            <span onclick="filterJobsByTag(this)">React</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 3 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail3.html?id=3')">
                     <div class="company-logo account" style="background-image: url('logos/logo3.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Account</span>
@@ -78,133 +103,276 @@
                         <h3>Junior Backend Developer</h3>
                         <p>2w ago • Contract • Worldwide</p>
                         <div class="job-tags">
-                            <span>Frontend</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                            <span>Sass</span>
+                            <span onclick="filterJobsByTag(this)">Frontend</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">React</span>
+                            <span onclick="filterJobsByTag(this)">Sass</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 4 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail4.html?id=4')">
                     <div class="company-logo myhome" style="background-image: url('logos/logo4.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">MyHome</span>
                         <h3>Junior Frontend Developer</h3>
                         <p>2d ago • Contract • USA</p>
                         <div class="job-tags">
-                            <span>Frontend</span>
-                            <span>Junior</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">Frontend</span>
+                            <span onclick="filterJobsByTag(this)">Junior</span>
+                            <span onclick="filterJobsByTag(this)">CSS</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 5 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail5.html?id=5')">
                     <div class="company-logo loop-studios" style="background-image: url('logos/logo5.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Loop Studios</span>
                         <h3>Software Engineer</h3>
                         <p>1w ago • Full Time • Worldwide</p>
                         <div class="job-tags">
-                            <span>Fullstack</span>
-                            <span>Midweight</span>
-                            <span>JavaScript</span>
-                            <span>Ruby</span>
-                            <span>Sass</span>
+                            <span onclick="filterJobsByTag(this)">Fullstack</span>
+                            <span onclick="filterJobsByTag(this)">Midweight</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">Ruby</span>
+                            <span onclick="filterJobsByTag(this)">Sass</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 6 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail6.html?id=6')">
                     <div class="company-logo facelt" style="background-image: url('logos/logo6.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Facelt</span>
                         <h3>Junior Backend Developer</h3>
                         <p>2w ago • Full Time • UK Only</p>
                         <div class="job-tags">
-                            <span>Backend</span>
-                            <span>Junior</span>
-                            <span>Ruby</span>
-                            <span>RoR</span>
+                            <span onclick="filterJobsByTag(this)">Backend</span>
+                            <span onclick="filterJobsByTag(this)">Junior</span>
+                            <span onclick="filterJobsByTag(this)">Ruby</span>
+                            <span onclick="filterJobsByTag(this)">RoR</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 7 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail7.html?id=7')">
                     <div class="company-logo shortly" style="background-image: url('logos/logo7.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Shortly</span>
                         <h3>Junior Backend Developer</h3>
                         <p>2w ago • Full Time • UK Only</p>
                         <div class="job-tags">
-                            <span>Frontend</span>
-                            <span>Junior</span>
-                            <span>HTML</span>
-                            <span>JavaScript</span>
-                            <span>Sass</span>
+                            <span onclick="filterJobsByTag(this)">Frontend</span>
+                            <span onclick="filterJobsByTag(this)">Junior</span>
+                            <span onclick="filterJobsByTag(this)">HTML</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">Sass</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 8 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail8.html?id=8')">
                     <div class="company-logo insure" style="background-image: url('logos/logo8.jpeg');" ></div>
                     <div class="job-details">
                         <span class="tag-name">Insure</span>
                         <h3>Junior Developer</h3>
                         <p>2w ago • Full Time • USA Only</p>
                         <div class="job-tags">
-                            <span>Frontend</span>
-                            <span>Junior</span>
-                            <span>JavaScript</span>
-                            <span>Vue</span>
-                            <span>Sass</span>
+                            <span onclick="filterJobsByTag(this)">Frontend</span>
+                            <span onclick="filterJobsByTag(this)">Junior</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">Vue</span>
+                            <span onclick="filterJobsByTag(this)">Sass</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 9 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail9.html?id=9')">
                     <div class="company-logo eyecame-co" style="background-image: url('logos/logo9.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">Eyecame Co.</span>
                         <h3>Full Stack Engineer</h3>
                         <p>3w ago • Full Time • Worldwide</p>
                         <div class="job-tags">
-                            <span>Fullstack</span>
-                            <span>Midweight</span>
-                            <span>JavaScript</span>
-                            <span>Python</span>
-                            <span>Django</span>
+                            <span onclick="filterJobsByTag(this)">Fullstack</span>
+                            <span onclick="filterJobsByTag(this)">Midweight</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">Python</span>
+                            <span onclick="filterJobsByTag(this)">Django</span>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job Card 10 -->
-                <div class="job-card" tabindex="0">
+                <div class="job-card" tabindex="0" onclick="navigateToDetail('jobHtml/jobDetail0.html?id=10')">
                     <div class="company-logo air-filter" style="background-image: url('logos/logo10.jpeg');"></div>
                     <div class="job-details">
                         <span class="tag-name">The Air Filter Company</span>
                         <h3>Front-end Developer</h3>
                         <p>1mo ago • Part Time • Worldwide</p>
                         <div class="job-tags">
-                            <span>Frontend</span>
-                            <span>Junior</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                            <span>Sass</span>
+                            <span onclick="filterJobsByTag(this)">Frontend</span>
+                            <span onclick="filterJobsByTag(this)">Junior</span>
+                            <span onclick="filterJobsByTag(this)">JavaScript</span>
+                            <span onclick="filterJobsByTag(this)">React</span>
+                            <span onclick="filterJobsByTag(this)">Sass</span>
                         </div>
                     </div>
-                </div>
+                    <div class="job-actions">
+                        <div class="icon-container edit-btn">
+                            <i class="fas fa-pen"></i>
+                            <span class="tooltip">Edit</span>
+                        </div>
+                        <div class="icon-container delete-btn">
+                            <i class="fas fa-times"></i>
+                            <span class="tooltip">Delete</span>
+                        </div>
+                    </div>
+                    
             </div>
         </section>
+        
+    <!-- </div> -->
+
+   <!-- Add New Job Button -->
+<div class="center-button-container">
+    <button onclick="openJobModal()" aria-haspopup="dialog" class="btn-primary">
+        + Add New Job
+    </button>
+</div>
+
+<!-- Modal -->
+<div id="job-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" style="display: none;">
+    <div class="modal-content">
+        <h2 id="modal-title">Add New Job</h2>
+        <form id="job-form" onsubmit="submitJobForm(event)">
+            <div class="form-group">
+                <label for="company-logo">Company Logo URL</label>
+                <input type="url" id="company-logo" placeholder="https://example.com/logo.png" required />
+            </div>
+            <div class="form-group">
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" placeholder="Enter company name" required />
+            </div>
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" placeholder="Enter job title" required />
+            </div>
+            <div class="form-group">
+                <label for="job-details">Job Description</label>
+                <textarea id="job-details" placeholder="Describe the job role and requirements" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="job-tags">Tags (comma-separated)</label>
+                <input type="text" id="job-tags" placeholder="e.g., Remote, Full-time, JavaScript" />
+            </div>
+            <div class="form-group">
+                <label for="job-type">Job Type</label>
+                <select id="job-type" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Freelance">Freelance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="application-deadline">Application Deadline</label>
+                <input type="date" id="application-deadline" required />
+            </div>
+            <div class="modal-actions">
+                <button type="submit" class="btn-primary">Save</button>
+                <button type="button" class="btn-secondary" onclick="closeJobModal()">Cancel</button>
+            </div>
+        </form>
     </div>
+</div>
+
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Job Listings. All rights reserved.</p>
+</footer>
 </body>
 
 </html>
