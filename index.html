@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-container">
+        <div class="header-content">
+            <!-- Search Bar -->
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search your dream job..." aria-label="Search your dream job">
+                <button class="clear-btn" onclick="document.querySelector('.search-bar').value = ''" aria-label="Clear search input">Clear</button>
+            </div>
+            <!-- Toggle Theme (Light/Dark Mode) -->
+            <div class="mood-container">
+                <button class="mood-btn" onclick="toggleMood()">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Job Listings Section -->
+        <section class="job-listings">
+            <div class="job-cards-container" id="job-cards-container">
+                <!-- Job cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Add New Job Button -->
+    <div class="center-button-container">
+        <button onclick="openJobModal()" aria-haspopup="dialog" class="btn-primary">
+            + Add New Job
+        </button>
+    </div>
+
+    <!-- Job Modal (Add New Job) -->
+    <div id="job-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-title">Add New Job</h2>
+            <form id="job-form" onsubmit="submitJobForm(event)">
+                <div class="form-group">
+                    <label for="company-logo">Company Logo URL</label>
+                    <input type="url" id="company-logo" placeholder="https://example.com/logo.png" required />
+                </div>
+                <div class="form-group">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" placeholder="Enter company name" required />
+                </div>
+                <div class="form-group">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" placeholder="Enter job title" required />
+                </div>
+                <div class="form-group">
+                    <label for="job-details">Job Description</label>
+                    <textarea id="job-details" placeholder="Describe the job role and requirements" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="job-tags">Tags (comma-separated)</label>
+                    <input type="text" id="job-tags" placeholder="e.g., Remote, Full-time, JavaScript" />
+                </div>
+                <div class="form-group">
+                    <label for="job-type">Job Type</label>
+                    <select id="job-type" required>
+                        <option value="" disabled selected>Select type</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Freelance">Freelance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="application-deadline">Application Deadline</label>
+                    <input type="date" id="application-deadline" required />
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Save</button>
+                    <button type="button" class="btn-secondary" onclick="closeJobModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Job Modal -->
+    <div id="edit-job-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Job</h2>
+            <form id="edit-job-form" onsubmit="submitEditJobForm(event)">
+                <input type="hidden" id="edit-job-id">
+                <div class="form-group">
+                    <label for="edit-company-logo">Company Logo URL</label>
+                    <input type="url" id="edit-company-logo" required />
+                </div>
+                <div class="form-group">
+                    <label for="edit-company-name">Company Name</label>
+                    <input type="text" id="edit-company-name" required />
+                </div>
+                <div class="form-group">
+                    <label for="edit-job-title">Job Title</label>
+                    <input type="text" id="edit-job-title" required />
+                </div>
+                <div class="form-group">
+                    <label for="edit-job-type">Job Type</label>
+                    <input type="text" id="edit-job-type" required />
+                </div>
+                <div class="form-group">
+                    <label for="edit-job-location">Location</label>
+                    <input type="text" id="edit-job-location" required />
+                </div>
+                <div class="form-group">
+                    <label for="edit-job-tags">Tags (comma-separated)</label>
+                    <input type="text" id="edit-job-tags" required />
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                    <button type="button" class="btn-secondary" onclick="closeEditModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Job Listings. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

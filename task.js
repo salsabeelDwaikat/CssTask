@@ -53,6 +53,9 @@ let editingJob = null;
 
 // Open modal for adding or editing a job
 function openJobModal(jobCard = null) {
+    // Prevent the default behavior
+    event.preventDefault(); 
+    
     editingJob = jobCard;
     if (jobCard) {
         // Pre-fill form for editing
@@ -70,6 +73,7 @@ function openJobModal(jobCard = null) {
 
     jobModal.style.display = "block"; // Show modal
 }
+
 
 // Close the modal
 function closeJobModal() {
@@ -130,25 +134,34 @@ function submitJobForm(event) {
         tagsContainer.innerHTML = jobTags.map((tag) => `<span>${tag}</span>`).join("");
     } else {
         // Adding new job card
-        const newJobCard = document.createElement("div");
-        newJobCard.className = "job-card";
-        newJobCard.tabIndex = 0;
-        newJobCard.innerHTML = `
-            <div class="company-logo" style="background-image: url('${companyLogo}');"></div>
-            <div class="job-details">
-                <span class="tag-name">${companyName}</span>
-                <h3>${jobTitle}</h3>
-                <p>${jobDetails}</p>
-                <div class="job-tags">${jobTags.map((tag) => `<span>${tag}</span>`).join("")}</div>
-            </div>
-            <div class="job-actions">
-                <button class="btn-edit" onclick="openJobModal(this.closest('.job-card'))"><i class="fas fa-edit"></i></button>
-                <button class="btn-delete" onclick="deleteJobCard(this.closest('.job-card'))"><i class="fas fa-trash"></i></button>
-            </div>
-        `;
-        const jobCardsContainer = document.querySelector(".job-cards-container");
-        jobCardsContainer.insertBefore(newJobCard, jobCardsContainer.firstChild);
-    }
+        // Inside submitJobForm or job card creation section
+const newJobCard = document.createElement("div");
+newJobCard.className = "job-card";
+newJobCard.tabIndex = 0;
+
+// Add a clickable link for navigation to the job detail page
+newJobCard.innerHTML = `
+    <div class="company-logo" style="background-image: url('${companyLogo}');"></div>
+    <div class="job-details">
+        <span class="tag-name">${companyName}</span>
+        <h3>${jobTitle}</h3>
+        <p>${jobDetails}</p>
+        <div class="job-tags">${jobTags.map((tag) => `<span>${tag}</span>`).join("")}</div>
+    </div>
+    <div class="job-actions">
+        <button class="btn-edit" onclick="openJobModal(this.closest('.job-card'))"><i class="fas fa-edit"></i></button>
+        <button class="btn-delete" onclick="deleteJobCard(this.closest('.job-card'))"><i class="fas fa-trash"></i></button>
+    </div>
+`;
+
+// Add a link around the job card or job title for navigation
+const jobDetailsLink = document.createElement('a');
+jobDetailsLink.href = `jobDetail.html?id=${jobId}`; // Add the job ID here
+jobDetailsLink.appendChild(newJobCard);  // Wrap the new job card with the link
+
+const jobCardsContainer = document.querySelector(".job-cards-container");
+jobCardsContainer.insertBefore(jobDetailsLink, jobCardsContainer.firstChild);
+}
 
     localStorage.removeItem("jobFormData"); // Clear saved form data
     closeJobModal(); // Close modal after saving
@@ -168,7 +181,11 @@ function addEventListenersToJobCards() {
             const deleteButton = card.querySelector(".btn-delete");
 
             if (editButton) {
-                editButton.addEventListener("click", () => openJobModal(card));
+                // Listen for the click event and open the modal
+                editButton.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent any default behavior (like navigation)
+                    openJobModal(card);
+                });
             }
             if (deleteButton) {
                 deleteButton.addEventListener("click", () => deleteJobCard(card));
@@ -176,6 +193,7 @@ function addEventListenersToJobCards() {
         });
     }
 }
+
 
 function getJobData(jobId) {
     // This is just an example. You should replace it with actual data retrieval logic.
